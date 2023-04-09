@@ -2,7 +2,7 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/types"
 )
 
 // GetMinter returns the minter

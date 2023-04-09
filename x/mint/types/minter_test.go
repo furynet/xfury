@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/types"
 	"github.com/stretchr/testify/require"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -15,7 +15,7 @@ import (
 func TestPhaseInflation(t *testing.T) {
 	params := types.DefaultParams()
 	// Governing Mechanism:
-	// sge tokenomics
+	// fury tokenomics
 
 	tests := []struct {
 		phase        int

@@ -1,3 +1,3 @@
-# **SGE Network Modules**
+# **FURY Network Modules**
 
-This Section details the specifications of all the custom modules used by the SGE Application
+This Section details the specifications of all the custom modules used by the FURY Application

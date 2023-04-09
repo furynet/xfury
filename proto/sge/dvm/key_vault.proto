@@ -1,9 +1,9 @@
 syntax = "proto3";
-package sgenetwork.sge.dvm;
+package furynetwork.fury.dvm;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/sge-network/sge/x/dvm/types";
+option go_package = "github.com/furynet/fury/x/dvm/types";
 
 // KeyVault is the information of important keys stored in dvm state.
 message KeyVault {

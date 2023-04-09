@@ -1,10 +1,10 @@
 syntax = "proto3";
-package sgenetwork.sge.house;
+package furynetwork.fury.house;
 
 import "gogoproto/gogo.proto";
-import "sge/house/withdraw.proto";
+import "fury/house/withdraw.proto";
 
-option go_package = "github.com/sge-network/sge/x/house/types";
+option go_package = "github.com/furynet/fury/x/house/types";
 
 // Msg defines the house Msg service.
 service Msg {

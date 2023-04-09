@@ -1,7 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [About SGE Network](../README.md)
+* [About FURY Network](../README.md)
 * [Modules](../README.md)
   * [Bet](../Bet/01_Overview.md)
   * [DVM](../DVM/01_Overview.md)

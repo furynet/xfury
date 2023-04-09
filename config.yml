@@ -1,34 +1,34 @@
 version: 1
 accounts:
   - name: treasury
-    coins: ["9000000000000usge"]
+    coins: ["9000000000000ufury"]
   - name: seed
-    coins: ["1000000000000usge"]
+    coins: ["1000000000000ufury"]
 validators:
   - name: treasury
-    bonded: "1000000000000usge"
+    bonded: "1000000000000ufury"
 genesis:
   app_state:
     bank:
       balances:
-        - address: "sge1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
-          coins: [{"denom": "usge", "amount": "500000000000"}]
+        - address: "did:fury:1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
+          coins: [{"denom": "ufury", "amount": "500000000000"}]
       supply:
-        - denom: "usge"
+        - denom: "ufury"
           amount: "500000000000"
     staking:
       params:
-        bond_denom: "usge"
+        bond_denom: "ufury"
     crisis:
       constant_fee:
-        denom: "usge"
+        denom: "ufury"
         amount: "1000"
     dvm:
       key_vault:
         public_keys: []
     gov:
       deposit_params:
-        min_deposit: [{ amount: "1", denom: "usge" }]
+        min_deposit: [{ amount: "1", denom: "ufury" }]
 
       voting_params:
         voting_period: "30s"
@@ -39,7 +39,7 @@ genesis:
         phase_step: "1"
         truncated_tokens: "0"
       params:
-        mint_denom: "usge"
+        mint_denom: "ufury"
         blocks_per_year: "100"
         phases:
           [

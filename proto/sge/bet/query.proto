@@ -1,52 +1,52 @@
 syntax = "proto3";
-package sgenetwork.sge.bet;
+package furynetwork.fury.bet;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
-import "sge/bet/params.proto";
-import "sge/bet/bet.proto";
-import "sge/market/market.proto";
+import "fury/bet/params.proto";
+import "fury/bet/bet.proto";
+import "fury/market/market.proto";
 
-option go_package = "github.com/sge-network/sge/x/bet/types";
+option go_package = "github.com/furynet/fury/x/bet/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/sge/bet/params";
+    option (google.api.http).get = "/fury/bet/params";
   }
 
   // Queries a Bet by uid.
   rpc Bet(QueryBetRequest) returns (QueryBetResponse) {
-    option (google.api.http).get = "/sge/bet/{creator}/{uid}";
+    option (google.api.http).get = "/fury/bet/{creator}/{uid}";
   }
 
   // Queries list of Bet items of a certain creator sorted by timestamp.
   rpc BetsByCreator(QueryBetsByCreatorRequest)
       returns (QueryBetsByCreatorResponse) {
-    option (google.api.http).get = "/sge/bet/creator/{creator}/bets";
+    option (google.api.http).get = "/fury/bet/creator/{creator}/bets";
   }
 
   // Queries list of Bet items.
   rpc Bets(QueryBetsRequest) returns (QueryBetsResponse) {
-    option (google.api.http).get = "/sge/bet/bets";
+    option (google.api.http).get = "/fury/bet/bets";
   }
 
   // Queries list of pending Bet items.
   rpc PendingBets(QueryPendingBetsRequest) returns (QueryPendingBetsResponse) {
-    option (google.api.http).get = "/sge/bet/bets/pending/{market_uid}";
+    option (google.api.http).get = "/fury/bet/bets/pending/{market_uid}";
   }
 
   // Queries list of settled Bet items of a certain height.
   rpc SettledBetsOfHeight(QuerySettledBetsOfHeightRequest)
       returns (QuerySettledBetsOfHeightResponse) {
-    option (google.api.http).get = "/sge/bet/bets/settled/{block_height}";
+    option (google.api.http).get = "/fury/bet/bets/settled/{block_height}";
   }
 
   // Queries a list of Bet items filtered by uid list.
   rpc BetsByUIDs(QueryBetsByUIDsRequest) returns (QueryBetsByUIDsResponse) {
-    option (google.api.http).get = "/sge/bet/bets-by-uids/{items}";
+    option (google.api.http).get = "/fury/bet/bets-by-uids/{items}";
   }
 }
 
@@ -72,7 +72,7 @@ message QueryBetRequest {
 // Query/Bet RPC method.
 message QueryBetResponse {
   Bet bet = 1 [ (gogoproto.nullable) = false ];
-  sgenetwork.sge.market.Market market = 2 [ (gogoproto.nullable) = false ];
+  furynetwork.fury.market.Market market = 2 [ (gogoproto.nullable) = false ];
 }
 
 // QueryBetsRequest is the request type for the bets list query

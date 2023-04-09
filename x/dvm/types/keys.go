@@ -1,6 +1,6 @@
 package types
 
-import "github.com/sge-network/sge/utils"
+import "github.com/furynet/fury/utils"
 
 // module constants
 const (

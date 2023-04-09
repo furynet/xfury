@@ -6,9 +6,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	simappUtil "github.com/sge-network/sge/testutil/simapp"
-	"github.com/sge-network/sge/x/bet/types"
-	markettypes "github.com/sge-network/sge/x/market/types"
+	simappUtil "github.com/furynet/fury/testutil/simapp"
+	"github.com/furynet/fury/x/bet/types"
+	markettypes "github.com/furynet/fury/x/market/types"
 	"github.com/stretchr/testify/require"
 )
 

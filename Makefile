@@ -16,7 +16,7 @@ PACKAGES_SIMTEST=$(shell go list ./... | grep '/simulation')
 LEDGER_ENABLED ?= true
 SDK_PACK := $(shell go list -m github.com/cosmos/cosmos-sdk | sed  's/ /\@/g')
 TM_VERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::') # grab everything after the space in "github.com/tendermint/tendermint v0.34.7"
-HTTPS_GIT := https://github.com/sge-network/sge.git
+HTTPS_GIT := https://github.com/furynet/fury.git
 DOCKER := $(shell which docker)
 DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR)/proto:/workspace --workdir /workspace bufbuild/buf
 BUILDDIR ?= $(CURDIR)/build
@@ -52,11 +52,11 @@ ifeq ($(LEDGER_ENABLED),true)
   endif
 endif
 
-ifeq (cleveldb,$(findstring cleveldb,$(SGE_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(FURY_BUILD_OPTIONS)))
   build_tags += gcc
 endif
 
-ifeq (secp,$(findstring secp,$(SGE_BUILD_OPTIONS)))
+ifeq (secp,$(findstring secp,$(FURY_BUILD_OPTIONS)))
   build_tags += libsecp256k1_sdk
 endif
 
@@ -67,34 +67,34 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=sge \
-		  -X github.com/cosmos/cosmos-sdk/version.AppName=sged \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=fury \
+		  -X github.com/cosmos/cosmos-sdk/version.AppName=xfury \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)" \
 			-X github.com/tendermint/tendermint/version.TMCoreSemVer=$(TM_VERSION)
 
 # DB backend selection
-ifeq (cleveldb,$(findstring cleveldb,$(SGE_BUILD_OPTIONS)))
+ifeq (cleveldb,$(findstring cleveldb,$(FURY_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=cleveldb
 endif
-ifeq (badgerdb,$(findstring badgerdb,$(SGE_BUILD_OPTIONS)))
+ifeq (badgerdb,$(findstring badgerdb,$(FURY_BUILD_OPTIONS)))
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=badgerdb
   BUILD_TAGS += badgerdb
 endif
 # handle rocksdb
-ifeq (rocksdb,$(findstring rocksdb,$(SGE_BUILD_OPTIONS)))
+ifeq (rocksdb,$(findstring rocksdb,$(FURY_BUILD_OPTIONS)))
   CGO_ENABLED=1
   BUILD_TAGS += rocksdb
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=rocksdb
 endif
 # handle boltdb
-ifeq (boltdb,$(findstring boltdb,$(SGE_BUILD_OPTIONS)))
+ifeq (boltdb,$(findstring boltdb,$(FURY_BUILD_OPTIONS)))
   BUILD_TAGS += boltdb
   ldflags += -X github.com/cosmos/cosmos-sdk/types.DBBackend=boltdb
 endif
 
-ifeq (,$(findstring nostrip,$(SGE_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(FURY_BUILD_OPTIONS)))
   ldflags += -w -s
 endif
 ldflags += $(LDFLAGS)
@@ -105,7 +105,7 @@ build_tags := $(strip $(build_tags))
 
 BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 # check for nostrip option
-ifeq (,$(findstring nostrip,$(SGE_BUILD_OPTIONS)))
+ifeq (,$(findstring nostrip,$(FURY_BUILD_OPTIONS)))
   BUILD_FLAGS += -trimpath
 endif
 
@@ -115,7 +115,7 @@ endif
 
 check_version:
 ifneq ($(GO_MINOR_VERSION),18)
-	@echo "ERROR: Go version 1.18 is required for this version of SGE. Go 1.19 has changes that are believed to break consensus."
+	@echo "ERROR: Go version 1.18 is required for this version of FURY. Go 1.19 has changes that are believed to break consensus."
 	exit 1
 endif
 
@@ -145,7 +145,7 @@ go.sum: go.mod
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/sged -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/xfury -d 2 | dot -Tpng -o dependency-graph.png
 
 clean:
 	rm -rf $(CURDIR)/artifacts/
@@ -187,7 +187,7 @@ docs:
 .PHONY: docs
 
 protoVer=v0.8
-protoImageName=sgenetwork/sge-proto-gen:$(protoVer)
+protoImageName=furynetwork/fury-proto-gen:$(protoVer)
 containerProtoGen=cosmos-sdk-proto-gen-$(protoVer)
 containerProtoFmt=cosmos-sdk-proto-fmt-$(protoVer)
 
@@ -275,7 +275,7 @@ update-swagger-docs: statik
 .PHONY: update-swagger-docs
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/SGE-Network/SGE/types"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/FURY-Network/FURY/types"
 	godoc -http=:6060
 
 # This builds a docs site for each branch/tag in `./docs/versions`

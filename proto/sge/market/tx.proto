@@ -1,10 +1,10 @@
 syntax = "proto3";
-package sgenetwork.sge.market;
+package furynetwork.fury.market;
 
 import "gogoproto/gogo.proto";
-import "sge/market/market.proto";
+import "fury/market/market.proto";
 
-option go_package = "github.com/sge-network/sge/x/market/types";
+option go_package = "github.com/furynet/fury/x/market/types";
 
 // Msg defines the Msg service.
 service Msg {

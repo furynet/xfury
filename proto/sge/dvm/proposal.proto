@@ -1,11 +1,11 @@
 syntax = "proto3";
-package sgenetwork.sge.dvm;
+package furynetwork.fury.dvm;
 
 import "gogoproto/gogo.proto";
-import "sge/dvm/ticket.proto";
-import "sge/dvm/vote.proto";
+import "fury/dvm/ticket.proto";
+import "fury/dvm/vote.proto";
 
-option go_package = "github.com/sge-network/sge/x/dvm/types";
+option go_package = "github.com/furynet/fury/x/dvm/types";
 
 // PublicKeysChangeProposal is the type for the proposal for additions and
 // removals of pub keys.

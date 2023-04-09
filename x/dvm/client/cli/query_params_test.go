@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/sge-network/sge/testutil/network"
-	"github.com/sge-network/sge/x/dvm/client/cli"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/testutil/network"
+	"github.com/furynet/fury/x/dvm/client/cli"
+	"github.com/furynet/fury/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

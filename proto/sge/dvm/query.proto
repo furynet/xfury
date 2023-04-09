@@ -1,33 +1,33 @@
 syntax = "proto3";
-package sgenetwork.sge.dvm;
+package furynetwork.fury.dvm;
 
 import "gogoproto/gogo.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "google/api/annotations.proto";
-import "sge/dvm/params.proto";
-import "sge/dvm/proposal.proto";
+import "fury/dvm/params.proto";
+import "fury/dvm/proposal.proto";
 
-option go_package = "github.com/sge-network/sge/x/dvm/types";
+option go_package = "github.com/furynet/fury/x/dvm/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/sge/dvm/params";
+    option (google.api.http).get = "/fury/dvm/params";
   }
   // Queries a list of PubKeys items.
   rpc PubKeys(QueryPubKeysRequest) returns (QueryPubKeysResponse) {
-    option (google.api.http).get = "/sge/dvm/pub_keys";
+    option (google.api.http).get = "/fury/dvm/pub_keys";
   }
   // Queries an proposal by id and status.
   rpc PublicKeysChangeProposal(QueryPublicKeysChangeProposalRequest)
       returns (QueryPublicKeysChangeProposalResponse) {
-    option (google.api.http).get = "/sge/dvm/pubkeys_proposal/{status}/{id}";
+    option (google.api.http).get = "/fury/dvm/pubkeys_proposal/{status}/{id}";
   }
   // Queries a list of proposal items by status.
   rpc PublicKeysChangeProposals(QueryPublicKeysChangeProposalsRequest)
       returns (QueryPublicKeysChangeProposalsResponse) {
-    option (google.api.http).get = "/sge/dvm/pubkeys_proposals/{status}";
+    option (google.api.http).get = "/fury/dvm/pubkeys_proposals/{status}";
   }
 }
 

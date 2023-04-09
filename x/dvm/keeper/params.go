@@ -2,7 +2,7 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/x/dvm/types"
 )
 
 // GetParams get all parameters as types.Params

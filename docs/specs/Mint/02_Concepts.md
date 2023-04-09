@@ -1,6 +1,6 @@
 # **Concepts**
 
-Unlike the default Mint Module of Cosmos-SDK which can vary the inflation rate dynamically based on the ratio of bonded and unbonded tokens at any point in time, the Mint module of the SGE-Network chain follows a strict regime of inflation rates defined as phases
+Unlike the default Mint Module of Cosmos-SDK which can vary the inflation rate dynamically based on the ratio of bonded and unbonded tokens at any point in time, the Mint module of the FURY-Network chain follows a strict regime of inflation rates defined as phases
 
 Phases are nothing but specific discreet time frames during which a certain inflation rate holds. Phases have two components:
 

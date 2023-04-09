@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/sge-network/sge/x/market/types"
+	"github.com/furynet/fury/x/market/types"
 )
 
 // AddMarket accepts ticket containing creation market and return response after processing

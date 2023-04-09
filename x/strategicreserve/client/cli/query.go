@@ -4,7 +4,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/spf13/cobra"
 
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/furynet/fury/x/strategicreserve/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

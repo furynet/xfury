@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/utils"
-	"github.com/sge-network/sge/x/market/types"
+	"github.com/furynet/fury/utils"
+	"github.com/furynet/fury/x/market/types"
 )
 
 // SetMarket sets a specific market in the store

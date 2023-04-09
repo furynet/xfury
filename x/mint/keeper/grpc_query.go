@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/types"
 )
 
 var _ types.QueryServer = Keeper{}

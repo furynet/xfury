@@ -2,8 +2,8 @@ package bet
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/x/bet/keeper"
-	"github.com/sge-network/sge/x/bet/types"
+	"github.com/furynet/fury/x/bet/keeper"
+	"github.com/furynet/fury/x/bet/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis

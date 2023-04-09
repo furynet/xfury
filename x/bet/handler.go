@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/sge-network/sge/x/bet/keeper"
-	"github.com/sge-network/sge/x/bet/types"
+	"github.com/furynet/fury/x/bet/keeper"
+	"github.com/furynet/fury/x/bet/types"
 )
 
 // NewHandler returns sdk.handler instance with configured message handler function

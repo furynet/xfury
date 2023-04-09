@@ -1,9 +1,9 @@
 syntax = "proto3";
-package sgenetwork.sge.house;
+package furynetwork.fury.house;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/sge-network/sge/x/house/types";
+option go_package = "github.com/furynet/fury/x/house/types";
 
 // Deposit represents the deposit against a market held by an account.
 message Deposit {

@@ -1,10 +1,10 @@
 syntax = "proto3";
-package sgenetwork.sge.mint;
+package furynetwork.fury.mint;
 
 import "gogoproto/gogo.proto";
-import "sge/mint/phase.proto";
+import "fury/mint/phase.proto";
 
-option go_package = "github.com/sge-network/sge/x/mint/types";
+option go_package = "github.com/furynet/fury/x/mint/types";
 
 // Params define the parameters for the module.
 message Params {

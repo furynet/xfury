@@ -8,8 +8,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/sge-network/sge/consts"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/consts"
+	"github.com/furynet/fury/x/mint/types"
 )
 
 // Keeper is the type for module properties

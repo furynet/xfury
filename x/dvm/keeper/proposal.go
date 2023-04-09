@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/x/dvm/types"
 )
 
 // SetPubkeysChangeProposal sets a pubkey list change proposal in the store.

@@ -4,7 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/sge-network/sge/x/house/types"
+	"github.com/furynet/fury/x/house/types"
 )
 
 // SetWithdrawal sets a withdrawal.

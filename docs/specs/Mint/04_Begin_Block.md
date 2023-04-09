@@ -72,7 +72,7 @@ If the phase has changed, set the minter with the changed parameters:
 
 ## **Next Phase Provision**
 
-Since the SGE-Network chain is predominantly reliant on phases for its inflation model, the phase_provision keeps track of the total amount of tokens to be distributed in the current phase. This value is calculated every time there is a phase change.
+Since the FURY-Network chain is predominantly reliant on phases for its inflation model, the phase_provision keeps track of the total amount of tokens to be distributed in the current phase. This value is calculated every time there is a phase change.
 
 ```go
 // NextPhaseProvisions returns the phase provisions based on current total

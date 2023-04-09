@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/sge-network/sge/testutil/network"
-	"github.com/sge-network/sge/x/bet/client/cli"
+	"github.com/furynet/fury/testutil/network"
+	"github.com/furynet/fury/x/bet/client/cli"
 	"github.com/stretchr/testify/require"
 )
 

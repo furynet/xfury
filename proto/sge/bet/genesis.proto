@@ -1,12 +1,12 @@
 syntax = "proto3";
-package sgenetwork.sge.bet;
+package furynetwork.fury.bet;
 
 import "gogoproto/gogo.proto";
-import "sge/bet/params.proto";
-import "sge/bet/bet.proto";
-import "sge/bet/stats.proto";
+import "fury/bet/params.proto";
+import "fury/bet/bet.proto";
+import "fury/bet/stats.proto";
 
-option go_package = "github.com/sge-network/sge/x/bet/types";
+option go_package = "github.com/furynet/fury/x/bet/types";
 
 // GenesisState defines the bet module's genesis state.
 message GenesisState {

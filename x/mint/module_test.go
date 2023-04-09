@@ -5,7 +5,7 @@ import (
 
 	sdksimapp "github.com/cosmos/cosmos-sdk/simapp"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/types"
 	"github.com/stretchr/testify/require"
 	abcitypes "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"

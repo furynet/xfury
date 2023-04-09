@@ -1,37 +1,37 @@
 syntax = "proto3";
-package sgenetwork.sge.house;
+package furynetwork.fury.house;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "sge/house/params.proto";
-import "sge/house/deposit.proto";
-import "sge/house/withdraw.proto";
+import "fury/house/params.proto";
+import "fury/house/deposit.proto";
+import "fury/house/withdraw.proto";
 
-option go_package = "github.com/sge-network/sge/x/house/types";
+option go_package = "github.com/furynet/fury/x/house/types";
 
 // Query defines the gRPC querier service.
 service Query {
   // Params queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/sge/house/params";
+    option (google.api.http).get = "/fury/house/params";
   }
 
   // Deposits queries all deposits.
   rpc Deposits(QueryDepositsRequest) returns (QueryDepositsResponse) {
-    option (google.api.http).get = "/sge/house/deposits";
+    option (google.api.http).get = "/fury/house/deposits";
   }
 
   // DepositsByAccount queries deposits info for given account.
   rpc DepositsByAccount(QueryDepositsByAccountRequest)
       returns (QueryDepositsByAccountResponse) {
-    option (google.api.http).get = "/sge/house/deposits/{address}";
+    option (google.api.http).get = "/fury/house/deposits/{address}";
   }
 
   // WithdrawalsByAccount queries withdrawals info for given account.
   rpc WithdrawalsByAccount(QueryWithdrawalsByAccountRequest)
       returns (QueryWithdrawalsByAccountResponse) {
-    option (google.api.http).get = "/sge/house/withdrawals/{address}";
+    option (google.api.http).get = "/fury/house/withdrawals/{address}";
   }
 }
 

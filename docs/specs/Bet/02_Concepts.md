@@ -47,6 +47,6 @@ When a user is raising a transaction to place a bet, the creator of the transact
 
 ### Precision
 
-Some of the Online Calculators round the division result to two-digit precision in Fractional and Moneyline calculations. In other words, these online calculators try to convert Moneyline and Fractional odds to Decimal odds and then calculate the payout according to the calculated rounded decimal value. This approach makes a big difference in the resulting payout. SGE-Network is accepting bets with usge that may have a high value in the market. For this kind of value, it is better to have a high-precision calculation in the blockchain code.
+Some of the Online Calculators round the division result to two-digit precision in Fractional and Moneyline calculations. In other words, these online calculators try to convert Moneyline and Fractional odds to Decimal odds and then calculate the payout according to the calculated rounded decimal value. This approach makes a big difference in the resulting payout. FURY-Network is accepting bets with ufury that may have a high value in the market. For this kind of value, it is better to have a high-precision calculation in the blockchain code.
 
 > Note: The final calculated payout amounts are rounded to 2 digit float values, so we have a small portion of lost benefits/payouts.

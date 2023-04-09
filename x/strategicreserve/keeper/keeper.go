@@ -8,7 +8,7 @@ import (
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/furynet/fury/x/strategicreserve/types"
 )
 
 // keeper of the strategicreserve store

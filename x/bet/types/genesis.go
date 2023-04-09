@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/sge-network/sge/utils"
+	"github.com/furynet/fury/utils"
 )
 
 // DefaultUID is the default  global uid

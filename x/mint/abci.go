@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/sge-network/sge/x/mint/keeper"
-	sgeMintTypes "github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/keeper"
+	furyMintTypes "github.com/furynet/fury/x/mint/types"
 	"github.com/spf13/cast"
 )
 
@@ -76,7 +76,7 @@ func BeginBlocker(ctx sdk.Context, k keeper.Keeper) {
 		sdk.NewEvent(
 			types.EventTypeMint,
 			sdk.NewAttribute(types.AttributeKeyInflation, minter.Inflation.String()),
-			sdk.NewAttribute(sgeMintTypes.AttributeKeyPhaseProvisions, minter.PhaseProvisions.String()),
+			sdk.NewAttribute(furyMintTypes.AttributeKeyPhaseProvisions, minter.PhaseProvisions.String()),
 			sdk.NewAttribute(sdk.AttributeKeyAmount, mintedCoin.Amount.String()),
 		),
 	)

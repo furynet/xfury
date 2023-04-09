@@ -1,6 +1,6 @@
-# SGE Network
+# FURY Network
 
-The Sports, Gaming & Entertainment Network (SGE Network), is a blockchain
+The Sports, Gaming & Entertainment Network (FURY Network), is a blockchain
 designed to support the future of sports betting & related gaming by
 leveraging the modular Cosmos design. We believe the future will be heavily shaped by many of the values driving the recent wave of crypto and blockchain development: transparency, increased decentralization, and utility that benefits all stakeholders, especially the user-base.
 
@@ -11,7 +11,7 @@ Utilizing a sovereign blockchain uniquely enables:
 - An unparalleled level of transparency.
 - An efficiency of settlement and immediate payout to participants.
 
-At launch, the SGE Network will be optimized to deploy an inaugural application: Six Sigma Sports, which is re-imagining the sports betting landscape and bringing a unique user experience with the benefit of blockchain technology.[Please visit to learn more about Six Sigma Sports.](https://sixsigmasports.io/)
+At launch, the FURY Network will be optimized to deploy an inaugural application: Six Sigma Sports, which is re-imagining the sports betting landscape and bringing a unique user experience with the benefit of blockchain technology.[Please visit to learn more about Six Sigma Sports.](https://sixsigmasports.io/)
 
 ---
 
@@ -36,7 +36,7 @@ At launch, the SGE Network will be optimized to deploy an inaugural application:
 >
 >Prerequisite: go1.18+ required. [ref](https://golang.org/doc/install)
 
-Sge could be installed by two ways - downloading binary from releases page or build from source.
+Fury could be installed by two ways - downloading binary from releases page or build from source.
 
 ### Download from releases page
 
@@ -44,10 +44,10 @@ Sge could be installed by two ways - downloading binary from releases page or bu
 
 - Check sha256 hash sum
 
-- Place sged into /usr/local/sbin
+- Place xfury into /usr/local/sbin
 
 ```shell
-sudo mv sged /usr/local/sbin/sged
+sudo mv xfury /usr/local/sbin/xfury
 ```
 
 ### Building from source
@@ -57,13 +57,13 @@ sudo mv sged /usr/local/sbin/sged
 - Clone git repository
 
 ```shell
-git clone https://github.com/sge-network/sge.git
+git clone https://github.com/furynet/fury.git
 ```
 
 - Checkout release tag
 
 ```shell
-cd sge
+cd fury
 git fetch --tags
 git checkout [vX.X.X]
 ```
@@ -78,21 +78,21 @@ make install
 ### Install system.d service file
 
 ```shell
-nano /etc/systemd/system/sged.service
+nano /etc/systemd/system/xfury.service
 ```
 
 Please following contents(working dir may be changed as needed)
 
 ```systemd
 [Unit]
-Description=Sge Network node
+Description=Fury Network node
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/usr/local/sbin/sged start
+ExecStart=/usr/local/sbin/xfury start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=40960
@@ -109,29 +109,29 @@ sudo systemctl daemon-reload
 
 ### Generate keys
 
-`sged keys add [key_name]`
+`xfury keys add [key_name]`
 
 or
 
-`sged keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
+`xfury keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
 
 ### Connect to a chain and start node
 
-- [Install](#installation-steps) sge application
+- [Install](#installation-steps) fury application
 - Initialize node
 
 ```shell
-sged init {{NODE_NAME}} --chain-id sge-network-1
+xfury init {{NODE_NAME}} --chain-id fury-network-1
 ```
 
 Select network to join
 
-- Replace `${HOME}/.sge/config/genesis.json` with the genesis file of the chain.
-- Add `persistent_peers` or `seeds` in `${HOME}/.sge/config/config.toml`
+- Replace `${HOME}/.fury/config/genesis.json` with the genesis file of the chain.
+- Add `persistent_peers` or `seeds` in `${HOME}/.fury/config/config.toml`
 - Start node
 
 ```shell
-sged start
+xfury start
 ```
 
 ## Network Compatibility Matrix
@@ -148,60 +148,60 @@ Coming Soon!!
 
 ### Testnet
 
-- [sge-network-1](https://github.com/sge-network/networks/sge-network-1)
+- [fury-network-1](https://github.com/fury-network/networks/fury-network-1)
 
 - Place the genesis file  with the genesis file of the chain.
 
 ```shell
-wget https://github.com/sge-network/networks/blob/master/sge-network-1/genesis.json -O ~/.sge/config/genesis.json
+wget https://github.com/fury-network/networks/blob/master/fury-network-1/genesis.json -O ~/.fury/config/genesis.json
 ```
 
 Verify genesis hash sum
 
 ```shell
-sha256sum ~/.sge/config/genesis.json
+sha256sum ~/.fury/config/genesis.json
 ```
 
-Correct sha256 sum for sge-network-1 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
+Correct sha256 sum for fury-network-1 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
 Genesis file sha sum is published in according repository.
 
-- Add `persistent_peers` or `seeds` in `${HOME}/.sge/config/config.toml`
+- Add `persistent_peers` or `seeds` in `${HOME}/.fury/config/config.toml`
 
 ```shell
-sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779e5c6cb07eb995@3.239.15.80:26656,0e7042be1b77707aaf0597bb804da90d3a606c08@3.88.40.53:26656/g' $HOME/.sge/config/config.toml
+sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779e5c6cb07eb995@3.239.15.80:26656,0e7042be1b77707aaf0597bb804da90d3a606c08@3.88.40.53:26656/g' $HOME/.fury/config/config.toml
 ```
 
 - Start node
 
 ```shell
-sged start
+xfury start
 ```
 
 ### Initialize a new chain and start node
 
-- Initialize: `sged init [node_name] --chain-id [chain_name]`
-- Add key for genesis account `sged keys add [genesis_key_name]`
-- Add genesis account `sged add-genesis-account [genesis_key_name] 10000000000000000000usge`
-- Create a validator at genesis `sged gentx [genesis_key_name] 10000000usge --chain-id [chain_name]`
-- Collect genesis transactions `sged collect-gentxs`
-- Start node `sged start`
+- Initialize: `xfury init [node_name] --chain-id [chain_name]`
+- Add key for genesis account `xfury keys add [genesis_key_name]`
+- Add genesis account `xfury add-genesis-account [genesis_key_name] 10000000000000000000ufury`
+- Create a validator at genesis `xfury gentx [genesis_key_name] 10000000ufury --chain-id [chain_name]`
+- Collect genesis transactions `xfury collect-gentxs`
+- Start node `xfury start`
 
 ### Reset chain
 
 ```shell
-rm -rf ~/.sge
+rm -rf ~/.fury
 ```
 
 ### Shutdown node
 
 ```shell
-killall sged
+killall xfury
 ```
 
 ### Check version
 
 ```shell
-sged version
+xfury version
 ```
 
 ### Documentations

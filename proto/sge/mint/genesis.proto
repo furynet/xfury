@@ -1,11 +1,11 @@
 syntax = "proto3";
-package sgenetwork.sge.mint;
+package furynetwork.fury.mint;
 
 import "gogoproto/gogo.proto";
-import "sge/mint/params.proto";
-import "sge/mint/minter.proto";
+import "fury/mint/params.proto";
+import "fury/mint/minter.proto";
 
-option go_package = "github.com/sge-network/sge/x/mint/types";
+option go_package = "github.com/furynet/fury/x/mint/types";
 
 // GenesisState defines the mint module's genesis state.
 message GenesisState {

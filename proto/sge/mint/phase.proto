@@ -1,9 +1,9 @@
 syntax = "proto3";
-package sgenetwork.sge.mint;
+package furynetwork.fury.mint;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/sge-network/sge/x/mint/types";
+option go_package = "github.com/furynet/fury/x/mint/types";
 
 // Phase defines the phase parameters for the module.
 message Phase {

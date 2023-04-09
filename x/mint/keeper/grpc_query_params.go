@@ -4,8 +4,8 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/consts"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/consts"
+	"github.com/furynet/fury/x/mint/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

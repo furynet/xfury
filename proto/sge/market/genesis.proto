@@ -1,12 +1,12 @@
 syntax = "proto3";
-package sgenetwork.sge.market;
+package furynetwork.fury.market;
 
 import "gogoproto/gogo.proto";
-import "sge/market/params.proto";
-import "sge/market/market.proto";
-import "sge/market/stats.proto";
+import "fury/market/params.proto";
+import "fury/market/market.proto";
+import "fury/market/stats.proto";
 
-option go_package = "github.com/sge-network/sge/x/market/types";
+option go_package = "github.com/furynet/fury/x/market/types";
 
 // GenesisState defines the market module's genesis state.
 message GenesisState {

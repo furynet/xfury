@@ -4,7 +4,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/sge-network/sge/x/market/types"
+	"github.com/furynet/fury/x/market/types"
 	"github.com/spf13/cobra"
 )
 

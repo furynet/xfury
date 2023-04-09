@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/app/params"
+	"github.com/furynet/fury/app/params"
 	"github.com/stretchr/testify/require"
 )
 

@@ -15,9 +15,9 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/sge-network/sge/x/dvm/client/cli"
-	"github.com/sge-network/sge/x/dvm/keeper"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/x/dvm/client/cli"
+	"github.com/furynet/fury/x/dvm/keeper"
+	"github.com/furynet/fury/x/dvm/types"
 )
 
 var (

@@ -1,10 +1,10 @@
 syntax = "proto3";
-package sgenetwork.sge.market;
+package furynetwork.fury.market;
 
 import "gogoproto/gogo.proto";
-import "sge/market/odds.proto";
+import "fury/market/odds.proto";
 
-option go_package = "github.com/sge-network/sge/x/market/types";
+option go_package = "github.com/furynet/fury/x/market/types";
 
 // Market is the representation of the market to be stored in
 // the market state.

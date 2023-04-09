@@ -14,7 +14,7 @@ import (
 
 // ExportAppStateAndValidators exports the state of the application for a genesis
 // file.
-func (app *SgeApp) ExportAppStateAndValidators(
+func (app *FuryApp) ExportAppStateAndValidators(
 	forZeroHeight bool, jailAllowedAddrs []string,
 ) (servertypes.ExportedApp, error) {
 	// as if they could withdraw from the start of the next block
@@ -47,7 +47,7 @@ func (app *SgeApp) ExportAppStateAndValidators(
 // NOTE zero height genesis is a temporary feature which will be deprecated
 //
 //	in favour of export at a block height
-func (app *SgeApp) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []string) {
+func (app *FuryApp) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []string) {
 	// get allowed validators
 	applyAllowedAddrs, allowedAddrsMap := app.getJailAllowedValidatorsMap(ctx, jailAllowedAddrs)
 
@@ -117,7 +117,7 @@ func (app *SgeApp) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []
 	)
 }
 
-func (app *SgeApp) reInitializeAllDelegators(ctx sdk.Context, dels stakingtypes.Delegations) {
+func (app *FuryApp) reInitializeAllDelegators(ctx sdk.Context, dels stakingtypes.Delegations) {
 	for _, del := range dels {
 		valAddr, err := sdk.ValAddressFromBech32(del.ValidatorAddress)
 		if err != nil {
@@ -132,7 +132,7 @@ func (app *SgeApp) reInitializeAllDelegators(ctx sdk.Context, dels stakingtypes.
 	}
 }
 
-func (app *SgeApp) getJailAllowedValidatorsMap(ctx sdk.Context, jailAllowedAddrs []string) (bool, map[string]bool) {
+func (app *FuryApp) getJailAllowedValidatorsMap(ctx sdk.Context, jailAllowedAddrs []string) (bool, map[string]bool) {
 	applyAllowedAddrs := false
 
 	// check if there is a allowed address list
@@ -152,7 +152,7 @@ func (app *SgeApp) getJailAllowedValidatorsMap(ctx sdk.Context, jailAllowedAddrs
 	return applyAllowedAddrs, allowedAddrsMap
 }
 
-func (app *SgeApp) withdrawAllDelegatorRewards(ctx sdk.Context) []stakingtypes.Delegation {
+func (app *FuryApp) withdrawAllDelegatorRewards(ctx sdk.Context) []stakingtypes.Delegation {
 	dels := app.StakingKeeper.GetAllDelegations(ctx)
 	for _, delegation := range dels {
 		valAddr, err := sdk.ValAddressFromBech32(delegation.ValidatorAddress)
@@ -172,7 +172,7 @@ func (app *SgeApp) withdrawAllDelegatorRewards(ctx sdk.Context) []stakingtypes.D
 	return dels
 }
 
-func (app *SgeApp) resetRedelegationCreationHeight(ctx sdk.Context) {
+func (app *FuryApp) resetRedelegationCreationHeight(ctx sdk.Context) {
 	// iterate through redelegations, reset creation height
 	app.StakingKeeper.IterateRedelegations(ctx, func(_ int64, red stakingtypes.Redelegation) (stop bool) {
 		for i := range red.Entries {
@@ -183,7 +183,7 @@ func (app *SgeApp) resetRedelegationCreationHeight(ctx sdk.Context) {
 	})
 }
 
-func (app *SgeApp) resetUnboundingdelegationCreationHeight(ctx sdk.Context) {
+func (app *FuryApp) resetUnboundingdelegationCreationHeight(ctx sdk.Context) {
 	// iterate through unbonding delegations, reset creation height
 	app.StakingKeeper.IterateUnbondingDelegations(ctx, func(_ int64, ubd stakingtypes.UnbondingDelegation) (stop bool) {
 		for i := range ubd.Entries {
@@ -194,7 +194,7 @@ func (app *SgeApp) resetUnboundingdelegationCreationHeight(ctx sdk.Context) {
 	})
 }
 
-func (app *SgeApp) resetValidatorsBondHeights(ctx sdk.Context, applyAllowedAddrs bool, allowedAddrsMap map[string]bool) {
+func (app *FuryApp) resetValidatorsBondHeights(ctx sdk.Context, applyAllowedAddrs bool, allowedAddrsMap map[string]bool) {
 	// Iterate through validators by power descending, reset bond heights, and
 	// update bond intra-tx counters.
 	store := ctx.KVStore(app.AppKeepers.GetKey(stakingtypes.StoreKey))

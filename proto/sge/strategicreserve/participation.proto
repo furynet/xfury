@@ -1,9 +1,9 @@
 syntax = "proto3";
-package sgenetwork.sge.strategicreserve;
+package furynetwork.fury.strategicreserve;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/sge-network/sge/x/strategicreserve/types";
+option go_package = "github.com/furynet/fury/x/strategicreserve/types";
 
 // OrderBookParticipation represents the participants of an order book.
 message OrderBookParticipation {

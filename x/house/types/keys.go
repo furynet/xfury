@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/sge-network/sge/utils"
+	"github.com/furynet/fury/utils"
 )
 
 const (

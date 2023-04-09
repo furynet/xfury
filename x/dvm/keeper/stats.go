@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/utils"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/utils"
+	"github.com/furynet/fury/x/dvm/types"
 )
 
 // SetProposalStats sets proposal statistics in the store

@@ -34,9 +34,9 @@ import (
 	ibcclientHandlers "github.com/cosmos/ibc-go/v3/modules/core/02-client/client"
 	"github.com/gorilla/mux"
 	"github.com/rakyll/statik/fs"
-	"github.com/sge-network/sge/app/keepers"
-	sgeappparams "github.com/sge-network/sge/app/params"
-	"github.com/sge-network/sge/app/upgrades"
+	"github.com/furynet/fury/app/keepers"
+	furyappparams "github.com/furynet/fury/app/params"
+	"github.com/furynet/fury/app/upgrades"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -70,8 +70,8 @@ var (
 )
 
 var (
-	_ sdksimapp.App           = (*SgeApp)(nil)
-	_ servertypes.Application = (*SgeApp)(nil)
+	_ sdksimapp.App           = (*FuryApp)(nil)
+	_ servertypes.Application = (*FuryApp)(nil)
 )
 
 func init() {
@@ -83,10 +83,10 @@ func init() {
 	DefaultNodeHome = filepath.Join(userHomeDir, "."+appName)
 }
 
-// SgeApp extends an ABCI application, but with most of its parameters exported.
+// FuryApp extends an ABCI application, but with most of its parameters exported.
 // They are exported for convenience in creating helper functions, as object
 // capabilities aren't needed for testing.
-type SgeApp struct {
+type FuryApp struct {
 	*baseapp.BaseApp
 	keepers.AppKeepers
 
@@ -104,8 +104,8 @@ type SgeApp struct {
 	configurator module.Configurator
 }
 
-// NewSgeApp returns a reference to an initialized Sge.
-func NewSgeApp(
+// NewFuryApp returns a reference to an initialized Fury.
+func NewFuryApp(
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,
@@ -113,10 +113,10 @@ func NewSgeApp(
 	skipUpgradeHeights map[int64]bool,
 	homePath string,
 	invCheckPeriod uint,
-	encodingConfig sgeappparams.EncodingConfig,
+	encodingConfig furyappparams.EncodingConfig,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) *SgeApp {
+) *FuryApp {
 	appCodec := encodingConfig.Marshaler
 	cdc := encodingConfig.Amino
 	interfaceRegistry := encodingConfig.InterfaceRegistry
@@ -126,7 +126,7 @@ func NewSgeApp(
 	bApp.SetVersion(version.Version)
 	bApp.SetInterfaceRegistry(interfaceRegistry)
 
-	app := &SgeApp{
+	app := &FuryApp{
 		BaseApp:           bApp,
 		cdc:               cdc,
 		appCodec:          appCodec,
@@ -220,8 +220,8 @@ func NewSgeApp(
 }
 
 // MakeCodecs constructs the *std.Codec and *codec.LegacyAmino instances used by
-// Sge. It is useful for tests and clients who do not want to construct the
-// full sge application
+// Fury. It is useful for tests and clients who do not want to construct the
+// full fury application
 func MakeCodecs() (codec.Codec,
 	*codec.LegacyAmino,
 ) {
@@ -230,23 +230,23 @@ func MakeCodecs() (codec.Codec,
 }
 
 // Name returns the name of the App
-func (app *SgeApp) Name() string { return app.BaseApp.Name() }
+func (app *FuryApp) Name() string { return app.BaseApp.Name() }
 
 // GetBaseApp returns the base app of the application
-func (app *SgeApp) GetBaseApp() *baseapp.BaseApp { return app.BaseApp }
+func (app *FuryApp) GetBaseApp() *baseapp.BaseApp { return app.BaseApp }
 
 // BeginBlocker application updates every begin block
-func (app *SgeApp) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
+func (app *FuryApp) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
 	return app.mm.BeginBlock(ctx, req)
 }
 
 // EndBlocker application updates every end block
-func (app *SgeApp) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
+func (app *FuryApp) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
 	return app.mm.EndBlock(ctx, req)
 }
 
 // InitChainer application update at chain initialization
-func (app *SgeApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
+func (app *FuryApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
 	var genesisState GenesisState
 	if err := tmjson.Unmarshal(req.AppStateBytes, &genesisState); err != nil {
 		panic(err)
@@ -258,12 +258,12 @@ func (app *SgeApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.
 }
 
 // LoadHeight loads a particular height
-func (app *SgeApp) LoadHeight(height int64) error {
+func (app *FuryApp) LoadHeight(height int64) error {
 	return app.LoadVersion(height)
 }
 
 // ModuleAccountAddrs returns all the app's module account addresses.
-func (app *SgeApp) ModuleAccountAddrs() map[string]bool {
+func (app *FuryApp) ModuleAccountAddrs() map[string]bool {
 	modAccAddrs := make(map[string]bool)
 
 	//#nosec
@@ -274,38 +274,38 @@ func (app *SgeApp) ModuleAccountAddrs() map[string]bool {
 	return modAccAddrs
 }
 
-// LegacyAmino returns SgeApp's amino codec.
+// LegacyAmino returns FuryApp's amino codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *SgeApp) LegacyAmino() *codec.LegacyAmino {
+func (app *FuryApp) LegacyAmino() *codec.LegacyAmino {
 	return app.cdc
 }
 
-// AppCodec returns Sge's app codec.
+// AppCodec returns Fury's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *SgeApp) AppCodec() codec.Codec {
+func (app *FuryApp) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns Sge's InterfaceRegistry
-func (app *SgeApp) InterfaceRegistry() types.InterfaceRegistry {
+// InterfaceRegistry returns Fury's InterfaceRegistry
+func (app *FuryApp) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }
 
 // GetSubspace returns a param subspace for a given module name.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *SgeApp) GetSubspace(moduleName string) paramstypes.Subspace {
+func (app *FuryApp) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
 
 // RegisterAPIRoutes registers all application module routes with the provided
 // API server.
-func (app *SgeApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
+func (app *FuryApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
 	clientCtx := apiSvr.ClientCtx
 	rpc.RegisterRoutes(clientCtx, apiSvr.Router)
 	// Register legacy tx routes.
@@ -326,17 +326,17 @@ func (app *SgeApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APICon
 }
 
 // RegisterTxService implements the Application.RegisterTxService method.
-func (app *SgeApp) RegisterTxService(clientCtx client.Context) {
+func (app *FuryApp) RegisterTxService(clientCtx client.Context) {
 	authtx.RegisterTxService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.BaseApp.Simulate, app.interfaceRegistry)
 }
 
 // RegisterTendermintService implements the Application.RegisterTendermintService method.
-func (app *SgeApp) RegisterTendermintService(clientCtx client.Context) {
+func (app *FuryApp) RegisterTendermintService(clientCtx client.Context) {
 	tmservice.RegisterTendermintService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.interfaceRegistry)
 }
 
 // configure store loader that checks if version == upgradeHeight and applies store upgrades
-func (app *SgeApp) setupUpgradeStoreLoaders() {
+func (app *FuryApp) setupUpgradeStoreLoaders() {
 	upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
 	if err != nil {
 		panic(fmt.Sprintf("failed to read upgrade info from disk %s", err))
@@ -353,7 +353,7 @@ func (app *SgeApp) setupUpgradeStoreLoaders() {
 	}
 }
 
-func (app *SgeApp) setupUpgradeHandlers() {
+func (app *FuryApp) setupUpgradeHandlers() {
 	for _, upgrade := range Upgrades {
 		app.UpgradeKeeper.SetUpgradeHandler(
 			upgrade.UpgradeName,
@@ -387,6 +387,6 @@ func GetMaccPerms() map[string][]string {
 }
 
 // SimulationManager implements the SimulationApp interface
-func (app *SgeApp) SimulationManager() *module.SimulationManager {
+func (app *FuryApp) SimulationManager() *module.SimulationManager {
 	return app.sm
 }

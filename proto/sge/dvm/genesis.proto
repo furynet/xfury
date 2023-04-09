@@ -1,13 +1,13 @@
 syntax = "proto3";
-package sgenetwork.sge.dvm;
+package furynetwork.fury.dvm;
 
 import "gogoproto/gogo.proto";
-import "sge/dvm/params.proto";
-import "sge/dvm/key_vault.proto";
-import "sge/dvm/proposal.proto";
-import "sge/dvm/stats.proto";
+import "fury/dvm/params.proto";
+import "fury/dvm/key_vault.proto";
+import "fury/dvm/proposal.proto";
+import "fury/dvm/stats.proto";
 
-option go_package = "github.com/sge-network/sge/x/dvm/types";
+option go_package = "github.com/furynet/fury/x/dvm/types";
 
 // GenesisState defines the dvm module's genesis state.
 message GenesisState {

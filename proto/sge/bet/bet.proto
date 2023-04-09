@@ -1,10 +1,10 @@
 syntax = "proto3";
-package sgenetwork.sge.bet;
+package furynetwork.fury.bet;
 
 import "gogoproto/gogo.proto";
-import "sge/bet/odds_type.proto";
+import "fury/bet/odds_type.proto";
 
-option go_package = "github.com/sge-network/sge/x/bet/types";
+option go_package = "github.com/furynet/fury/x/bet/types";
 
 // Bet is the transaction order placed by a bettor on a specific event and odd
 message Bet {
@@ -33,7 +33,7 @@ message Bet {
 
   // odds_type is the type of odds that
   // user choose such as decimal, fractional, etc
-  sgenetwork.sge.bet.OddsType odds_type = 4;
+  furynetwork.fury.bet.OddsType odds_type = 4;
 
   // odds_value is the odds on which the bet is placed.
   string odds_value = 5;

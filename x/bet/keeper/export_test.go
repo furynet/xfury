@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	"github.com/sge-network/sge/x/bet/types"
-	markettypes "github.com/sge-network/sge/x/market/types"
+	"github.com/furynet/fury/x/bet/types"
+	markettypes "github.com/furynet/fury/x/market/types"
 )
 
 // KeeperTest is a wrapper object for the keeper, It is being used

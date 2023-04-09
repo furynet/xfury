@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/sge-network/sge/x/dvm/keeper"
-	"github.com/sge-network/sge/x/dvm/types"
+	"github.com/furynet/fury/x/dvm/keeper"
+	"github.com/furynet/fury/x/dvm/types"
 )
 
 // NewHandler initialize a new sdk.handler instance for registered messages

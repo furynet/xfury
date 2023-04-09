@@ -13,12 +13,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/sge-network/sge/x/mint/simulation"
-	"github.com/sge-network/sge/x/mint/types"
+	"github.com/furynet/fury/x/mint/simulation"
+	"github.com/furynet/fury/x/mint/types"
 )
 
 var params = types.Params{
-	MintDenom:     "usge",
+	MintDenom:     "ufury",
 	BlocksPerYear: 100,
 	Phases:        types.DefaultGenesis().Params.Phases,
 }
@@ -49,9 +49,9 @@ func TestRandomizedGenState(t *testing.T) {
 	simState.Cdc.MustUnmarshalJSON(simState.GenState[types.ModuleName], &mintGenesis)
 
 	require.Equal(t, int64(6311520), mintGenesis.Params.BlocksPerYear)
-	require.Equal(t, "usge", mintGenesis.Params.MintDenom)
+	require.Equal(t, "ufury", mintGenesis.Params.MintDenom)
 	bp, _ := mintGenesis.Minter.BlockProvisions(mintGenesis.Params, 1)
-	require.Equal(t, "0usge", bp.String())
+	require.Equal(t, "0ufury", bp.String())
 	require.Equal(t, "0.000000000000000000", mintGenesis.Minter.NextPhaseProvisions(sdk.OneInt(), types.DefaultExcludeAmount, types.NonePhase()).String())
 	require.Equal(t, "0.229787234042553191", params.GetPhaseAtStep(1).Inflation.String())
 	require.Equal(t, "0.286259541984732824", params.GetPhaseAtStep(2).Inflation.String())

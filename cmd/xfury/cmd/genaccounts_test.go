@@ -9,15 +9,15 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/sge-network/sge/cmd/sged/cmd"
-	"github.com/sge-network/sge/testutil/network"
+	"github.com/furynet/fury/cmd/xfury/cmd"
+	"github.com/furynet/fury/testutil/network"
 	"github.com/stretchr/testify/require"
 )
 
 func TestAddGenesisAccountCmdPanic(t *testing.T) {
 	userHomeDir, err := os.UserHomeDir()
 	require.NoError(t, err)
-	defaultNodeHome := filepath.Join(userHomeDir, ".sge")
+	defaultNodeHome := filepath.Join(userHomeDir, ".fury")
 	panicFunc := func() {
 		cmd.AddGenesisAccountCmd(defaultNodeHome)
 	}
@@ -36,9 +36,9 @@ func TestSampleCMD(t *testing.T) {
 
 	userHomeDir, err := os.UserHomeDir()
 	require.NoError(t, err)
-	defaultNodeHome := filepath.Join(userHomeDir, ".sge")
+	defaultNodeHome := filepath.Join(userHomeDir, ".fury")
 
-	fields := []string{keyInfo.GetAddress().String(), "10000000usge"}
+	fields := []string{keyInfo.GetAddress().String(), "10000000ufury"}
 	for _, tc := range []struct {
 		desc string
 		args []string

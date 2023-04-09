@@ -17,12 +17,12 @@ import (
 	stakingKeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	"github.com/cosmos/cosmos-sdk/x/staking/teststaking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/sge-network/sge/app"
-	"github.com/sge-network/sge/app/params"
-	"github.com/sge-network/sge/utils"
-	dvmtypes "github.com/sge-network/sge/x/dvm/types"
-	mintmoduletypes "github.com/sge-network/sge/x/mint/types"
-	strategicreservetypes "github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/furynet/fury/app"
+	"github.com/furynet/fury/app/params"
+	"github.com/furynet/fury/utils"
+	dvmtypes "github.com/furynet/fury/x/dvm/types"
+	mintmoduletypes "github.com/furynet/fury/x/mint/types"
+	strategicreservetypes "github.com/furynet/fury/x/strategicreserve/types"
 	"github.com/spf13/cast"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
@@ -32,9 +32,9 @@ import (
 	tmdb "github.com/tendermint/tm-db"
 )
 
-// TestApp is used as a container of the sge app
+// TestApp is used as a container of the fury app
 type TestApp struct {
-	app.SgeApp
+	app.FuryApp
 }
 
 // Options defines options related to simapp initialization
@@ -46,12 +46,12 @@ type Options struct {
 func setup(withGenesis bool, invCheckPeriod uint) (*TestApp, app.GenesisState) {
 	db := tmdb.NewMemDB()
 	encCdc := app.MakeEncodingConfig()
-	appInstance := app.NewSgeApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, "", invCheckPeriod, encCdc,
+	appInstance := app.NewFuryApp(log.NewNopLogger(), db, nil, true, map[int64]bool{}, "", invCheckPeriod, encCdc,
 		sdksimapp.EmptyAppOptions{})
 	if withGenesis {
-		return &TestApp{SgeApp: *appInstance}, app.NewDefaultGenesisState()
+		return &TestApp{FuryApp: *appInstance}, app.NewDefaultGenesisState()
 	}
-	return &TestApp{SgeApp: *appInstance}, app.GenesisState{}
+	return &TestApp{FuryApp: *appInstance}, app.GenesisState{}
 }
 
 // Setup initializes genesis the same as simapp

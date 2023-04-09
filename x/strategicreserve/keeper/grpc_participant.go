@@ -6,7 +6,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/sge-network/sge/x/strategicreserve/types"
+	"github.com/furynet/fury/x/strategicreserve/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
