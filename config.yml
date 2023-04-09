@@ -1,53 +1,22 @@
-version: 1
 accounts:
-  - name: treasury
-    coins: ["9000000000000uxfury"]
-  - name: seed
-    coins: ["1000000000000uxfury"]
-validators:
-  - name: treasury
-    bonded: "1000000000000uxfury"
-genesis:
-  app_state:
-    bank:
-      balances:
-        - address: "did:fury:1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
-          coins: [{"denom": "xfury", "amount": "500000000000"}]
-      supply:
-        - denom: "xfury"
-          amount: "500000000000"
-    staking:
-      params:
-        bond_denom: "xfury"
-    crisis:
-      constant_fee:
-        denom: "xfury"
-        amount: "1000"
-    dvm:
-      key_vault:
-        public_keys: []
-    gov:
-      deposit_params:
-        min_deposit: [{ amount: "1", denom: "xfury" }]
-
-      voting_params:
-        voting_period: "30s"
-    mint:
-      minter:
-        phase_provisions: "100000000000000.000000000000000000"
-        inflation: "0.1"
-        phase_step: "1"
-        truncated_tokens: "0"
-      params:
-        mint_denom: "xfury"
-        blocks_per_year: "100"
-        phases:
-          [
-            { inflation: "0.100000000000000000", year_coefficient: "1" },
-          ]
-        exclude_amount: "500000000000"
-    market:
-      params:
-        min_bet_amount: "1000000"
-        min_bet_fee: "0"
-        max_sr_contribution: "100000000"
+  - name: alice
+    coins: ["20000state", "200000000stake"]
+  - name: bob
+    coins: ["10000state", "100000000stake"]
+  - name: carol
+    coins: ["10000state", "100000000stake"]
+  - name: dom
+    coins: ["10000state", "100000000stake"]
+  - name: eve
+    coins: ["10000state", "100000000stake"]
+validator:
+  name: alice
+  staked: "100000000stake"
+client:
+  openapi:
+    path: "docs/static/openapi.yml"
+  vuex:
+    path: "vue/src/store"
+faucet:
+  name: bob
+  coins: ["80000000state", "100000stake"]
