@@ -1,34 +1,34 @@
 version: 1
 accounts:
   - name: treasury
-    coins: ["9000000000000ufury"]
+    coins: ["9000000000000xfury"]
   - name: seed
-    coins: ["1000000000000ufury"]
+    coins: ["1000000000000xfury"]
 validators:
   - name: treasury
-    bonded: "1000000000000ufury"
+    bonded: "1000000000000xfury"
 genesis:
   app_state:
     bank:
       balances:
         - address: "did:fury:1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
-          coins: [{"denom": "ufury", "amount": "500000000000"}]
+          coins: [{"denom": "xfury", "amount": "500000000000"}]
       supply:
-        - denom: "ufury"
+        - denom: "xfury"
           amount: "500000000000"
     staking:
       params:
-        bond_denom: "ufury"
+        bond_denom: "xfury"
     crisis:
       constant_fee:
-        denom: "ufury"
+        denom: "xfury"
         amount: "1000"
     dvm:
       key_vault:
         public_keys: []
     gov:
       deposit_params:
-        min_deposit: [{ amount: "1", denom: "ufury" }]
+        min_deposit: [{ amount: "1", denom: "xfury" }]
 
       voting_params:
         voting_period: "30s"
@@ -39,7 +39,7 @@ genesis:
         phase_step: "1"
         truncated_tokens: "0"
       params:
-        mint_denom: "ufury"
+        mint_denom: "xfury"
         blocks_per_year: "100"
         phases:
           [

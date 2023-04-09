@@ -5,7 +5,7 @@ const (
 	// HumanCoinUnit is human readable representation of the coin name
 	HumanCoinUnit = "fury"
 	// BaseCoinUnit is the actual name of coin used in transaction
-	BaseCoinUnit = "ufury"
+	BaseCoinUnit = "xfury"
 	// FURYExponent is the exponential digits of the coin
 	FURYExponent = 6
 	// DefaultBondDenom is the default staking denom of application

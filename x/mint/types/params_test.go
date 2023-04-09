@@ -21,7 +21,7 @@ func TestParamsYML(t *testing.T) {
 	}
 
 	ymlStr := param.String()
-	require.Equal(t, "mintdenom: ufury\nblocks_per_year: 10\nphases:\n- inflation: \"10.000000000000000000\"\n  year_coefficient: \"1.000000000000000000\"\nexclude_amount: \"100\"\n", ymlStr)
+	require.Equal(t, "mintdenom: xfury\nblocks_per_year: 10\nphases:\n- inflation: \"10.000000000000000000\"\n  year_coefficient: \"1.000000000000000000\"\nexclude_amount: \"100\"\n", ymlStr)
 }
 
 func TestIsPhaseAtStep(t *testing.T) {

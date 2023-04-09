@@ -181,8 +181,8 @@ xfury start
 
 - Initialize: `xfury init [node_name] --chain-id [chain_name]`
 - Add key for genesis account `xfury keys add [genesis_key_name]`
-- Add genesis account `xfury add-genesis-account [genesis_key_name] 10000000000000000000ufury`
-- Create a validator at genesis `xfury gentx [genesis_key_name] 10000000ufury --chain-id [chain_name]`
+- Add genesis account `xfury add-genesis-account [genesis_key_name] 10000000000000000000xfury`
+- Create a validator at genesis `xfury gentx [genesis_key_name] 10000000xfury --chain-id [chain_name]`
 - Collect genesis transactions `xfury collect-gentxs`
 - Start node `xfury start`
 
