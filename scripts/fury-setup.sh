@@ -46,17 +46,20 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install gcc
 
 
-echo "----------------------installing fury---------------"
-git clone https://github.com/fanfury-sports/fanfury -b fanfury
-cd fanfury
-make build && make install
-mv ~/fanfury/build/fury $FURY_HOME/cosmovisor/genesis/bin/fury
-
 echo "-------------------installing cosmovisor-----------------------"
 git clone -b $COSMOVISOR_VERSION https://github.com/onomyprotocol/onomy-sdk $COSMOVISOR_SRC
 cd $COSMOVISOR_SRC
 make cosmovisor
 cp cosmovisor/cosmovisor $FURY_HOME/bin/cosmovisor
+
+
+echo "----------------------installing fury---------------"
+git clone https://github.com/furynet/xfury
+cd xfury
+make build && make install
+mv ~/xfury/build/xfury $FURY_HOME/cosmovisor/genesis/bin/xfury
+
+
 
 echo "-------------------adding binaries to path-----------------------"
 chmod +x $FURY_HOME/bin/*
@@ -72,27 +75,19 @@ echo "export DAEMON_NAME=fury" >> ~/.bashrc
 echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.bashrc
 
 
-# Note: Download the keys files
-git clone https://github.com/gridironzone/gridtestnet-1
-cd gridtestnet-1/testnet-1
-mv keys ~/
-cd 
-rm -rf ~/.fury
-
 PASSWORD="F@nfuryG#n3sis@fury"
 GAS_PRICES="0.000025utfury"
-CHAIN_ID="gridiron_4200-3"
-NODE="(fury tendermint show-node-id)"
+CHAIN_ID="fanfury-test-1"
+NODE="(xfury tendermint show-node-id)"
 
-fury init gridiron_4200-3 --chain-id $CHAIN_ID --staking-bond-denom utfury
+xfury init fanfury-testnet --chain-id $CHAIN_ID --staking-bond-denom utfury
 
-
-# Note: Download the genesis file
-curl -o ~/.fury/config/genesis.json https://raw.githubusercontent.com/furynet/gentxs/main/redshift/genesis.json
 
 # Note: Add an account
-yes $PASSWORD | fury keys import genArgentina ~/keys/genArgentina.key
-
+yes $PASSWORD | xfury keys add fanfury-1
+yes $PASSWORD | xfury add-genesis-acount fanfury-1 1000000000000000000utfury
+yes $PASSWORD | xfury gentx fanfury-1 500000000000000000utfury
+yes $PASSWORD | xfury collect-gentxs
 
 # Set staking token (both bond_denom and mint_denom)
 STAKING_TOKEN="utfury"
@@ -125,9 +120,6 @@ FROM="\"voting_period\": \"172800s\""
 TO="\"voting_period\": \"$MAX_VOTING_PERIOD\""
 sed -i -e "s/$FROM/$TO/" "$HOME"/.fury/config/genesis.json
 
-yes $PASSWORD | fury gentx genArgentina 120000000000utfury --chain-id $CHAIN_ID
-fury validate-genesis
-
 # Enable REST API
 FROM="enable = false"
 TO="enable = true"
@@ -147,9 +139,8 @@ sed -i -e "s/$FROM/$TO/" "$HOME"/.fury/config/config.toml
 sed -i -e "s/timeout_commit = "5s"/timeout_commit = "1s"/g" "$HOME"/.fury/config/config.toml
 sed -i -e "s/timeout_propose = "3s"/timeout_propose = "1s"/g" "$HOME"/.fury/config/config.toml
 
-cp -r ~/.fury/config/gentx ~/gridtestnet-1/gentx-node1
+xfury validate-genesis
 
-sudo rm -rf ~/gridtestnet-1/testnet-1 ~/keys ~/fanfury 
 
 echo "
 ###############################################################################
@@ -161,15 +152,8 @@ echo "
 ###                    
 ###                                											                                											
 ###                     ~!!~  Congratulations  ~!!~
-###             The Gridiron Chain is now ready to be started!!                  						                  											
-###                                	
-###                  A copy of your gentx file has been copied               											
-###                    	to the $HOME/gridtestnet-1 repo		
-###                                											
-###                     Please DO NOT forget to send a  						
-###                          PR to this repo to 
-###                       ensure your participation!							            											
-###                                											
+###               The Fanfury Chain will now be started!!                  						                  											
+###               
 ###                                											
 ###                                											
 ###
@@ -179,3 +163,4 @@ echo "
 ###############################################################################
 "
 
+xfury start --seed-node true

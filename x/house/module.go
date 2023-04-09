@@ -14,9 +14,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/furynet/fury/x/house/client/cli"
-	"github.com/furynet/fury/x/house/keeper"
-	"github.com/furynet/fury/x/house/types"
+	"github.com/furynet/xfury/x/house/client/cli"
+	"github.com/furynet/xfury/x/house/keeper"
+	"github.com/furynet/xfury/x/house/types"
 )
 
 // AppModuleBasic defines the basic application module used by the house module.

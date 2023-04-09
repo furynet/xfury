@@ -6,7 +6,7 @@ import "fury/bet/params.proto";
 import "fury/bet/bet.proto";
 import "fury/bet/stats.proto";
 
-option go_package = "github.com/furynet/fury/x/bet/types";
+option go_package = "github.com/furynet/xfury/x/bet/types";
 
 // GenesisState defines the bet module's genesis state.
 message GenesisState {

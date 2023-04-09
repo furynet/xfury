@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	sdksimapp "github.com/cosmos/cosmos-sdk/simapp"
-	"github.com/furynet/fury/app"
+	"github.com/furynet/xfury/app"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/libs/log"
 	tmdb "github.com/tendermint/tm-db"

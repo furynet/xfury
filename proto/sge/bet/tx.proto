@@ -3,7 +3,7 @@ package furynetwork.fury.bet;
 
 import "fury/bet/place_bet_fields.proto";
 
-option go_package = "github.com/furynet/fury/x/bet/types";
+option go_package = "github.com/furynet/xfury/x/bet/types";
 
 // Msg defines the Msg service.
 service Msg {

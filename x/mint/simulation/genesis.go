@@ -9,8 +9,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/furynet/fury/app/params"
-	"github.com/furynet/fury/x/mint/types"
+	"github.com/furynet/xfury/app/params"
+	"github.com/furynet/xfury/x/mint/types"
 )
 
 // Simulation parameter constants

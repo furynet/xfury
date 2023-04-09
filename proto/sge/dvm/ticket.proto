@@ -3,7 +3,7 @@ package furynetwork.fury.dvm;
 
 import "fury/dvm/vote.proto";
 
-option go_package = "github.com/furynet/fury/x/dvm/types";
+option go_package = "github.com/furynet/xfury/x/dvm/types";
 
 // PubkeysChangeProposalPayload indicates data of public keys changes proposal
 // ticket.

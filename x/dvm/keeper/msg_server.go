@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/furynet/fury/x/dvm/types"
+	"github.com/furynet/xfury/x/dvm/types"
 )
 
 type msgServer struct {

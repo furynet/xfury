@@ -7,7 +7,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/spf13/cast"
 
-	"github.com/furynet/fury/x/strategicreserve/types"
+	"github.com/furynet/xfury/x/strategicreserve/types"
 )
 
 // BatchOrderBookSettlements settles order books

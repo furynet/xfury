@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/mint/types"
-	"github.com/furynet/fury/x/mint/keeper"
-	furyMintTypes "github.com/furynet/fury/x/mint/types"
+	"github.com/furynet/xfury/x/mint/keeper"
+	furyMintTypes "github.com/furynet/xfury/x/mint/types"
 	"github.com/spf13/cast"
 )
 

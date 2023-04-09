@@ -3,7 +3,7 @@ package furynetwork.fury.market;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/furynet/fury/x/market/types";
+option go_package = "github.com/furynet/xfury/x/market/types";
 
 // Odds is a representation of market odds.
 message Odds {

@@ -5,7 +5,7 @@ import "gogoproto/gogo.proto";
 import "fury/dvm/ticket.proto";
 import "fury/dvm/vote.proto";
 
-option go_package = "github.com/furynet/fury/x/dvm/types";
+option go_package = "github.com/furynet/xfury/x/dvm/types";
 
 // PublicKeysChangeProposal is the type for the proposal for additions and
 // removals of pub keys.

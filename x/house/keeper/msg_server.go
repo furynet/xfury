@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/furynet/fury/x/house/types"
+	"github.com/furynet/xfury/x/house/types"
 )
 
 type msgServer struct {

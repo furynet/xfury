@@ -9,8 +9,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/furynet/fury/x/bet/keeper"
-	"github.com/furynet/fury/x/bet/types"
+	"github.com/furynet/xfury/x/bet/keeper"
+	"github.com/furynet/xfury/x/bet/types"
 	"github.com/spf13/cast"
 )
 

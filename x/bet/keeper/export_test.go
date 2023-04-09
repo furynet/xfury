@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	"github.com/furynet/fury/x/bet/types"
-	markettypes "github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/x/bet/types"
+	markettypes "github.com/furynet/xfury/x/market/types"
 )
 
 // KeeperTest is a wrapper object for the keeper, It is being used

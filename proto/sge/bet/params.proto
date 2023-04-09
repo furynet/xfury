@@ -3,7 +3,7 @@ package furynetwork.fury.bet;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/furynet/fury/x/bet/types";
+option go_package = "github.com/furynet/xfury/x/bet/types";
 
 // Params defines the parameters for the module.
 message Params {

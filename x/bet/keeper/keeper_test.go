@@ -9,11 +9,11 @@ import (
 	"github.com/spf13/cast"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	simappUtil "github.com/furynet/fury/testutil/simapp"
-	"github.com/furynet/fury/x/bet/keeper"
-	"github.com/furynet/fury/x/bet/types"
-	marketkeeper "github.com/furynet/fury/x/market/keeper"
-	markettypes "github.com/furynet/fury/x/market/types"
+	simappUtil "github.com/furynet/xfury/testutil/simapp"
+	"github.com/furynet/xfury/x/bet/keeper"
+	"github.com/furynet/xfury/x/bet/types"
+	marketkeeper "github.com/furynet/xfury/x/market/keeper"
+	markettypes "github.com/furynet/xfury/x/market/types"
 	"github.com/stretchr/testify/require"
 )
 

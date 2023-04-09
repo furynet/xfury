@@ -3,8 +3,8 @@ package strategicreserve
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furynet/fury/x/strategicreserve/keeper"
-	"github.com/furynet/fury/x/strategicreserve/types"
+	"github.com/furynet/xfury/x/strategicreserve/keeper"
+	"github.com/furynet/xfury/x/strategicreserve/types"
 )
 
 // InitGenesis sets the parameters for the provided keeper.

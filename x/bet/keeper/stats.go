@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furynet/fury/utils"
-	"github.com/furynet/fury/x/bet/types"
+	"github.com/furynet/xfury/utils"
+	"github.com/furynet/xfury/x/bet/types"
 )
 
 // SetBetStats sets bet statistics in the store

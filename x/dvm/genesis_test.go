@@ -3,10 +3,10 @@ package dvm_test
 import (
 	"testing"
 
-	"github.com/furynet/fury/testutil/nullify"
-	simappUtil "github.com/furynet/fury/testutil/simapp"
-	"github.com/furynet/fury/x/dvm"
-	"github.com/furynet/fury/x/dvm/types"
+	"github.com/furynet/xfury/testutil/nullify"
+	simappUtil "github.com/furynet/xfury/testutil/simapp"
+	"github.com/furynet/xfury/x/dvm"
+	"github.com/furynet/xfury/x/dvm/types"
 	"github.com/stretchr/testify/require"
 )
 

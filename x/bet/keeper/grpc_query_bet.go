@@ -8,8 +8,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/furynet/fury/consts"
-	"github.com/furynet/fury/x/bet/types"
+	"github.com/furynet/xfury/consts"
+	"github.com/furynet/xfury/x/bet/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

@@ -6,7 +6,7 @@ import "fury/market/params.proto";
 import "fury/market/market.proto";
 import "fury/market/stats.proto";
 
-option go_package = "github.com/furynet/fury/x/market/types";
+option go_package = "github.com/furynet/xfury/x/market/types";
 
 // GenesisState defines the market module's genesis state.
 message GenesisState {

@@ -1,6 +1,6 @@
 package types
 
-import "github.com/furynet/fury/utils"
+import "github.com/furynet/xfury/utils"
 
 // module constants
 const (

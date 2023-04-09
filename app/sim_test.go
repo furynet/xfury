@@ -12,7 +12,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/store"
 	simulation2 "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/furynet/fury/app"
+	"github.com/furynet/xfury/app"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/libs/log"
 	"github.com/tendermint/tendermint/libs/rand"

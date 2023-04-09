@@ -16,9 +16,9 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/furynet/fury/x/market/client/cli"
-	"github.com/furynet/fury/x/market/keeper"
-	"github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/x/market/client/cli"
+	"github.com/furynet/xfury/x/market/keeper"
+	"github.com/furynet/xfury/x/market/types"
 )
 
 var (

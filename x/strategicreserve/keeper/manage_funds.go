@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/furynet/fury/app/params"
-	"github.com/furynet/fury/x/strategicreserve/types"
+	"github.com/furynet/xfury/app/params"
+	"github.com/furynet/xfury/x/strategicreserve/types"
 )
 
 // transferFundsFromAccountToModule transfers the given amount from

@@ -24,7 +24,7 @@ cd ..
 # move proto files to the right places
 #
 # Note: Proto files are suffixed with the current binary version.
-cp -r github.com/furynet/fury/* ./
+cp -r github.com/furynet/xfury/* ./
 rm -rf github.com
 
 go mod tidy -compat=1.18

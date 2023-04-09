@@ -8,7 +8,7 @@ import "fury/bet/params.proto";
 import "fury/bet/bet.proto";
 import "fury/market/market.proto";
 
-option go_package = "github.com/furynet/fury/x/bet/types";
+option go_package = "github.com/furynet/xfury/x/bet/types";
 
 // Query defines the gRPC querier service.
 service Query {

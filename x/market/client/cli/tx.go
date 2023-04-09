@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/x/market/types"
 )
 
 const listSeparator = ","

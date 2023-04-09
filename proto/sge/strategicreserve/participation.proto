@@ -3,7 +3,7 @@ package furynetwork.fury.strategicreserve;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/furynet/fury/x/strategicreserve/types";
+option go_package = "github.com/furynet/xfury/x/strategicreserve/types";
 
 // OrderBookParticipation represents the participants of an order book.
 message OrderBookParticipation {

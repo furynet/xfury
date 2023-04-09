@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furynet/fury/consts"
-	"github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/consts"
+	"github.com/furynet/xfury/x/market/types"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

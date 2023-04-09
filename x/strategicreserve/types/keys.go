@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/furynet/fury/utils"
+	"github.com/furynet/xfury/utils"
 )
 
 const (

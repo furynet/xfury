@@ -3,7 +3,7 @@ package cli
 import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/furynet/fury/x/dvm/types"
+	"github.com/furynet/xfury/x/dvm/types"
 	"github.com/spf13/cobra"
 )
 

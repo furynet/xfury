@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/furynet/fury/x/bet/types"
+	"github.com/furynet/xfury/x/bet/types"
 )
 
 // Keeper is the type for module properties

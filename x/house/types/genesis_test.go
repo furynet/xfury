@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/google/uuid"
-	"github.com/furynet/fury/x/house/types"
+	"github.com/furynet/xfury/x/house/types"
 	"github.com/stretchr/testify/require"
 )
 

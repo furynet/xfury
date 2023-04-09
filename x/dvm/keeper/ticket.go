@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furynet/fury/x/dvm/types"
+	"github.com/furynet/xfury/x/dvm/types"
 )
 
 // VerifyTicket validates a ticket.

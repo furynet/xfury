@@ -3,8 +3,8 @@ package house
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furynet/fury/x/house/keeper"
-	"github.com/furynet/fury/x/house/types"
+	"github.com/furynet/xfury/x/house/keeper"
+	"github.com/furynet/xfury/x/house/types"
 )
 
 // InitGenesis sets the deposits and parameters for the provided keeper.

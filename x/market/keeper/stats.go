@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furynet/fury/utils"
-	"github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/utils"
+	"github.com/furynet/xfury/x/market/types"
 )
 
 // SetMarketStats sets market statistics in the store

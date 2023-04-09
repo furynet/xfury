@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	markettypes "github.com/furynet/fury/x/market/types"
+	markettypes "github.com/furynet/xfury/x/market/types"
 )
 
 // AccountKeeper defines the expected account keeper used for simulations (noalias)

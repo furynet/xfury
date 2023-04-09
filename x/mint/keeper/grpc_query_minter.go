@@ -4,7 +4,7 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/furynet/fury/x/mint/types"
+	"github.com/furynet/xfury/x/mint/types"
 )
 
 // Inflation returns current inflation.

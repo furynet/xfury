@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/furynet/fury/x/house/types"
+	"github.com/furynet/xfury/x/house/types"
 )
 
 // GetParams return parameters of the module

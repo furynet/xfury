@@ -8,7 +8,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/furynet/fury/app/params"
+	"github.com/furynet/xfury/app/params"
 	"gopkg.in/yaml.v2"
 )
 

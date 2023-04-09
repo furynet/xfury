@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/furynet/fury/x/mint/types"
+	"github.com/furynet/xfury/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -7,7 +7,7 @@ import "google/api/annotations.proto";
 import "fury/dvm/params.proto";
 import "fury/dvm/proposal.proto";
 
-option go_package = "github.com/furynet/fury/x/dvm/types";
+option go_package = "github.com/furynet/xfury/x/dvm/types";
 
 // Query defines the gRPC querier service.
 service Query {

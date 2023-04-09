@@ -39,24 +39,24 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v3/modules/core"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
-	furyappparams "github.com/furynet/fury/app/params"
-	"github.com/furynet/fury/x/mint"
-	minttypes "github.com/furynet/fury/x/mint/types"
+	furyappparams "github.com/furynet/xfury/app/params"
+	"github.com/furynet/xfury/x/mint"
+	minttypes "github.com/furynet/xfury/x/mint/types"
 
-	betmodule "github.com/furynet/fury/x/bet"
-	betmoduletypes "github.com/furynet/fury/x/bet/types"
+	betmodule "github.com/furynet/xfury/x/bet"
+	betmoduletypes "github.com/furynet/xfury/x/bet/types"
 
-	marketmodule "github.com/furynet/fury/x/market"
-	marketmoduletypes "github.com/furynet/fury/x/market/types"
+	marketmodule "github.com/furynet/xfury/x/market"
+	marketmoduletypes "github.com/furynet/xfury/x/market/types"
 
-	strategicreservemodule "github.com/furynet/fury/x/strategicreserve"
-	strategicreservemoduletypes "github.com/furynet/fury/x/strategicreserve/types"
+	strategicreservemodule "github.com/furynet/xfury/x/strategicreserve"
+	strategicreservemoduletypes "github.com/furynet/xfury/x/strategicreserve/types"
 
-	dvmmodule "github.com/furynet/fury/x/dvm"
-	dvmmoduletypes "github.com/furynet/fury/x/dvm/types"
+	dvmmodule "github.com/furynet/xfury/x/dvm"
+	dvmmoduletypes "github.com/furynet/xfury/x/dvm/types"
 
-	housemodule "github.com/furynet/fury/x/house"
-	housemoduletypes "github.com/furynet/fury/x/house/types"
+	housemodule "github.com/furynet/xfury/x/house"
+	housemoduletypes "github.com/furynet/xfury/x/house/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package furynetwork.fury.mint;
 
-option go_package = "github.com/furynet/fury/x/mint/types";
+option go_package = "github.com/furynet/xfury/x/mint/types";
 
 import "gogoproto/gogo.proto";
 

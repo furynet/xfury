@@ -60,7 +60,7 @@ sudo mv xfury /usr/local/sbin/xfury
 - Clone git repository
 
 ```shell
-git clone https://github.com/furynet/fury.git
+git clone https://github.com/furynet/xfury.git
 ```
 
 - Checkout release tag

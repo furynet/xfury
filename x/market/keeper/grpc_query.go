@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/furynet/fury/x/market/types"
+	"github.com/furynet/xfury/x/market/types"
 )
 
 var _ types.QueryServer = Keeper{}

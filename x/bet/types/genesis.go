@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/furynet/fury/utils"
+	"github.com/furynet/xfury/utils"
 )
 
 // DefaultUID is the default  global uid
