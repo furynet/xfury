@@ -40,14 +40,15 @@ service Query {
   // participation index.
   rpc OrderBookParticipation(QueryOrderBookParticipationRequest)
       returns (QueryOrderBookParticipationResponse) {
-    option (google.api.http).get =
-        "/fury/orderbooks/{order_book_uid}/participations/{participation_index}";
+    option (google.api.http).get = "/fury/orderbooks/{order_book_uid}/"
+                                   "participations/{participation_index}";
   }
 
   // OrderBookExposures queries exposures info for the given order book.
   rpc OrderBookExposures(QueryOrderBookExposuresRequest)
       returns (QueryOrderBookExposuresResponse) {
-    option (google.api.http).get = "/fury/orderbooks/{order_book_uid}/exposures";
+    option (google.api.http).get =
+        "/fury/orderbooks/{order_book_uid}/exposures";
   }
 
   // OrderBookExposure queries exposure info for the given order book and odds

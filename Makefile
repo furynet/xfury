@@ -187,7 +187,7 @@ docs:
 .PHONY: docs
 
 protoVer=v0.8
-protoImageName=furynetwork/fury-proto-gen:$(protoVer)
+protoImageName=fanfury/fanfury:xfury--proto-gen-$(protoVer)
 containerProtoGen=cosmos-sdk-proto-gen-$(protoVer)
 containerProtoFmt=cosmos-sdk-proto-fmt-$(protoVer)
 
