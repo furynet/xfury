@@ -1,12 +1,12 @@
 version: 1
 accounts:
   - name: treasury
-    coins: ["9000000000000xfury"]
+    coins: ["9000000000000uxfury"]
   - name: seed
-    coins: ["1000000000000xfury"]
+    coins: ["1000000000000uxfury"]
 validators:
   - name: treasury
-    bonded: "1000000000000xfury"
+    bonded: "1000000000000uxfury"
 genesis:
   app_state:
     bank:

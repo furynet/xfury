@@ -38,7 +38,7 @@ func TestSampleCMD(t *testing.T) {
 	require.NoError(t, err)
 	defaultNodeHome := filepath.Join(userHomeDir, ".fury")
 
-	fields := []string{keyInfo.GetAddress().String(), "10000000xfury"}
+	fields := []string{keyInfo.GetAddress().String(), "10000000uxfury"}
 	for _, tc := range []struct {
 		desc string
 		args []string
