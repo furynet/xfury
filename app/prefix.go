@@ -7,7 +7,7 @@ import (
 
 const (
 	// AccountAddressPrefix prefix used for generating account address
-	AccountAddressPrefix = "did:fury:"
+	AccountAddressPrefix = "black"
 )
 
 var (

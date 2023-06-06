@@ -62,7 +62,7 @@ message MsgPlaceBetResponse {
  "kyc_data": {
    "ignore": false,
    "approved": true,
-   "id": "did:fury:1w77wnncp6w6llqt0ysgahpxjscg8wspw43jvtd"
+   "id": "black1w77wnncp6w6llqt0ysgahpxjscg8wspw43jvtd"
  },
  "odds_type":1,
  "exp": 1667863498866062000,

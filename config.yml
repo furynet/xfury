@@ -11,7 +11,7 @@ genesis:
   app_state:
     bank:
       balances:
-        - address: "did:fury:1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
+        - address: "black1kypq29kggkextekt869pwpfukj6lsw38c8a43w"
           coins: [{"denom": "xfury", "amount": "500000000000"}]
       supply:
         - denom: "xfury"
